@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prescription list</title>
+</head>
+<body>
+    <h2>prescription list</h2>
+    <ul>
+        {% for prescription in prescriptions %}
+        <li>
+            <img src="{{ prescription.prescription_image.url }}" alt="Prescription Imagee" width="200">
+            <p>{{ prescription.description }}</p>
+            <p>Upload date: {{ prescription.upload_date }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
