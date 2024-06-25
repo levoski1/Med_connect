@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload prescription</title>
+</head>
+<body>
+    <h3>Upload Prescription</h3>
+    <form action="{% url 'upload_prescription' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Upload</button>
+    </form>
+    
+</body>
+</html>
