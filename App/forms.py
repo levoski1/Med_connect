@@ -16,3 +16,4 @@ class PrescriptionForm(forms.ModelForm):
     class Meta:
         model = PrescriptionModel
         fields = ['prescription_image', 'description']
+

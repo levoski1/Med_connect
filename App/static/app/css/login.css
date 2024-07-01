@@ -1,0 +1,102 @@
+/* body{
+
+    background-image: url(/images/rider.jpg );
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+} */
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../images/pexels-shvetsa-3683088.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.wrapper{
+    width: 420px;
+   background: transparent;
+   border: 2px solid;
+    color: white;
+    border-radius: 12px;
+    padding: 30px 40px; 
+    backdrop-filter:blur(7px);
+}
+ .wrapper h2{
+    font: size 32px;
+    text-align: center;
+ }
+ .wrapper .input-field{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+ }
+
+ .input-field input{
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    /* border: none;
+    outline: none;
+    border: 2px solid; */
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    padding-left: 30px;
+ }
+
+ .input-field input::placeholder{
+    color: black;
+ }
+
+ .wrapper .remember{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    
+ }
+
+ .remember a{
+    color: white;
+    text-decoration: none;
+ }
+
+ .remember a:hover{
+    text-decoration: underline;
+ }
+
+ .wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background-color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: grey;
+    font-weight: 600;
+    margin-top: 10px;
+ }
+
+ .wrapper .register{
+   font-size: 15px;
+   text-align: center;
+   margin-bottom: 15px;
+ }
+
+ .register p a{
+   color: white;
+   text-decoration: none;
+   font-weight: 600;
+ }
+
+ .register p a:hover{
+   text-decoration: underline;
+ }
+
+ .btn:hover{
+   background-color: aqua;
+ }
