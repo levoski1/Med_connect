@@ -26,9 +26,10 @@ def register_view(request):
             messages.success(request, 'Registration successful. Welcome to MedConnect!')          
             return redirect('home')
         else:
-            messages.error(request, 'There was an error with your registration. Please try again.')
-    else:
-        form = RegisterForm()
+            for field, error in form.errors.items():
+                for error in error:
+                    messages.error(request, f'Error in {field} : {error}')
+    form = RegisterForm()
     return render(request, "app/register.html", {'form': form})
 
 
@@ -41,13 +42,19 @@ def login_view(request):
             password = form.cleaned_data.get('password')
             remember_me = request.POST.get('remember_me')
             user = authenticate(username=username, password = password)
+            messages.success(request, 'Login successful. Welcome to MedConnect!')
             if user is not None:
                 login(request, user)
                 if remember_me:
                     request.session.set_expiry(60 * 2 * 1 * 1)
                 else:
                     request.session.set_expiry(0)
+            
                 return redirect('upload_prescription')
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f'Error in {field} : {error}')
     else:
         form = AuthenticationForm()
     return render(request, 'app/login.html', {'form': form})

@@ -4,14 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/messages.css' %}">
 </head>
 <body>
-    <h1>Register Page</h1>
-
-    <form method="post" action="{% url 'register' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
+    <div class="wrapper">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">{{message}}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <div class="logo">
+                <img src="{% static 'app/images/logo.jpeg' %}">
+            </div>
+            <h2>MedConnet</h2>
+            <h3>Register</h3>
+            <div class="input-field">
+                <input type="text" name="{{ form.username.name }}" placeholder="User Name" required >
+            </div>
+            <div class="input-field">
+                <input type="email" name="{{ form.email.name }}" placeholder="Email Address" required >
+            </div>
+            <div class="input-field">
+                <input type="password" name="{{ form.password1.name }}" placeholder="Enter Password" required >
+            </div>
+            <div class="input-field">
+                <input type="password" name="{{ form.password2.name }}" placeholder="Comfirm Password" required >
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <div class="register">
+            <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+        </div>
+    </div>
 </body>
 </html>

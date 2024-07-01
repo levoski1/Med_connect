@@ -1,31 +1,34 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(../images/pexels-shvetsa-3683088.jpg) no-repeat;
+    background: url(../images/register.jpg) no-repeat;
     background-size: cover;
     background-position: center;
+    margin: 0; /* Remove default body margin */
+    /* overflow: hidden; Prevent scrolling */
 }
 
-.wrapper{
-    width: 300px;
+.wrapper {
+    width: 350px;
     background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     border: 1px solid white; /* Reduced border width */
     color: white;
     border-radius: 12px;
-    padding: 30px 40px; 
+    padding: 30px 70px; 
     backdrop-filter: blur(5px);
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
-.wrapper h2{
+.wrapper h2 {
     font-size: 32px;
     text-align: center;
-    color:  rgb(136, 244, 208);
+    color: rgb(136, 244, 208);
 }
 
 .wrapper h3{
@@ -33,14 +36,14 @@ body{
     text-align: center;
 }
 
-.wrapper .input-field{
+.wrapper .input-field {
     width: 100%;
-    height: 50px;
+    height: 30px;
     margin: 30px 0;
 }
 
-.input-field input{
-    width: 90%;
+.input-field input {
+    width: 100%;
     height: 100%;
     background: transparent;
     border: 2px solid white; /* Ensure border is visible */
@@ -48,30 +51,14 @@ body{
     font-size: 16px;
     color: white;
     padding-left: 30px;
+    box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
-.input-field input::placeholder{
+.input-field input::placeholder {
     color: #ccc; /* Lighter placeholder color */
 }
 
-.wrapper .remember{
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.remember a{
-    color: white;
-    text-decoration: none;
-}
-
-.remember a:hover{
-    text-decoration: underline;
-}
-
-.wrapper .btn{
+.wrapper .btn {
     width: 100%;
     height: 45px;
     background-color: white;
@@ -83,30 +70,31 @@ body{
     margin-top: 10px;
 }
 
-.wrapper .register{
+.wrapper .register {
     font-size: 15px;
     text-align: center;
     margin-bottom: 15px;
 }
 
-.register p a{
+.register p a {
     color: white;
     text-decoration: none;
     font-weight: 600;
 }
 
-.register p a:hover{
+.register p a:hover {
     text-decoration: underline;
     color:  rgb(136, 244, 208);
 }
 
-.btn:hover{
+.btn:hover {
     background-color: rgb(136, 244, 208);
 }
 
-.logo img{
+.logo img {
     width: 30%;
     border-radius: 50%;
     display: block;
     margin: 0px auto;
 }
+
