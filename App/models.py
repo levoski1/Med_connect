@@ -11,3 +11,5 @@ class PrescriptionModel(models.Model):
 
     def __str__(self) -> str:
         return f'Prescription of {self.id} by {self.user.username}'
+    
+    

@@ -10,21 +10,16 @@ from django.contrib.auth.tokens import default_token_generator
 import os
 
 
-# Create your views here.
-
-def home(request):
-    return render(request, 'app/home.html')
-
 
 # Register view
 def register_view(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
+            messages.success(request, 'Registration successful. Welcome to MedConnect!')
             user = form.save()
-            login(request, user)
-            messages.success(request, 'Registration successful. Welcome to MedConnect!')          
-            return redirect('home')
+            login(request, user)                   
+            return redirect('product:home')
         else:
             for field, error in form.errors.items():
                 for error in error:
@@ -50,7 +45,7 @@ def login_view(request):
                 else:
                     request.session.set_expiry(0)
             
-                return redirect('upload_prescription')
+                return redirect('product:home')
         else:
             for field, errors in form.errors.items():
                 for error in errors:
@@ -64,7 +59,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect('home')
+    return redirect('product:home')
 
 
 # upload view
@@ -76,7 +71,7 @@ def upload_prescription(request):
             prescription = form.save(commit=False)
             prescription.user = request.user
             prescription.save()
-            return redirect('prescription_list')
+            return redirect('app:prescription_list')
     else:
         form = PrescriptionForm()
     return render(request, 'app/prescription.html', {'form':form})
