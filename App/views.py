@@ -37,9 +37,9 @@ def login_view(request):
             password = form.cleaned_data.get('password')
             remember_me = request.POST.get('remember_me')
             user = authenticate(username=username, password = password)
-            messages.success(request, 'Login successful. Welcome to MedConnect!')
             if user is not None:
                 login(request, user)
+                messages.success(request, 'Login successful. Welcome to MedConnect!')
                 if remember_me:
                     request.session.set_expiry(60 * 2 * 1 * 1)
                 else:
@@ -103,4 +103,4 @@ class PasswordResetConfirm(my_views.PasswordResetConfirmView):
 
 
 class PasswordResetComplete(my_views.PasswordResetCompleteView):
-    template_name = 'app/reset_complete.html'
+    template_name = 'app/password_reset_complete.html'
