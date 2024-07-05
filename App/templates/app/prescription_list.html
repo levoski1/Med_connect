@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #343a40;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        li {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MedConnect</h1>
+        {% if request.user.is_authenticated %}
+        <span>Welcome, {{ user.username }}</span>
+        {% endif %}
+        <br>
+        <br>
+        <nav>
+            <a href="{% url 'product:home'%}">Home</a>
+            <a href="#">Contact Us</a>
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'product:view_cart' %}">Cart</a>
+            <a href="{% url 'app:upload_prescription' %}">Prescription</a>
+            <a href="{% url 'app:logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'app:login' %}">Login</a>
+            <a href="{% url 'app:register' %}">Sign Up</a>
+        {% endif %}
+    </header>
+
+    <h2>Prescription List</h2>
+    <ul>
+        {% for prescription in prescriptions %}
+        <li>
+            <img src="{{ prescription.prescription_image.url }}" alt="Prescription Image">
+            <p>{{ prescription.description }}</p>
+            <p>Upload date: {{ prescription.upload_date }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <footer>
+        <p>&copy; 2024 MedConnect. All rights reserved.</p>
+    </footer>
+</body>
+</html>
