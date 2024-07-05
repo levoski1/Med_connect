@@ -21,7 +21,7 @@
         {% if request.user.is_authenticated %}
         <span>Welcome, {{ user.username }}</span>
             <a href="{% url 'product:view_cart' %}">Cart</a>
-            <a href="{% url 'app:prescription' %}">Prescription</a>
+            <a href="{% url 'app:upload_prescription' %}">Prescription</a>
             <a href="{% url 'app:logout' %}">Logout</a>
         {% else %}
             <a href="{% url 'app:login' %}">Login</a>

@@ -3,15 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>upload prescription</title>
+    <title>Upload Prescription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header, footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #343a40;
+        }
+
+        form {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        form p {
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #343a40;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #495057;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>MedConnect</h1>
+        <nav>
+            <a href="index.html" style="color: white; margin: 0 10px;">Home</a>
+            <a href="shop.html" style="color: white; margin: 0 10px;">Shop</a>
+            <a href="cart.html" style="color: white; margin: 0 10px;">Cart</a>
+            <a href="contact.html" style="color: white; margin: 0 10px;">Contact Us</a>
+        </nav>
+    </header>
+
     <h3>Upload Prescription</h3>
     <form action="{% url 'app:upload_prescription' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p}}
+        {{ form.as_p }}
         <button type="submit">Upload</button>
     </form>
     
+    <footer>
+        <p>&copy; 2024 MedConnect. All rights reserved.</p>
+    </footer>
 </body>
 </html>
