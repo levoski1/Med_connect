@@ -148,8 +148,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465  # or 587 if you prefer to use TLS instead of SSL
 EMAIL_USE_SSL = True  # Use SSL/TLS connection
 EMAIL_USE_TLS = False  # Disable TLS, since we are using SSL
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') 
+EMAIL_HOST_USER = 'johnma9857@gmail.com'
+EMAIL_HOST_PASSWORD = 'gwkl fnob zbic zgmb'
 
 
 #MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

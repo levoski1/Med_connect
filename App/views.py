@@ -103,4 +103,4 @@ class PasswordResetConfirm(my_views.PasswordResetConfirmView):
 
 
 class PasswordResetComplete(my_views.PasswordResetCompleteView):
-    template_name = 'app/password_reset_complete.html'
+    template_name = 'app/reset_complete.html'
