@@ -1,0 +1,30 @@
+.messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center; /* Center align the message text */
+}
+
+.message.success {
+    background-color: rgba(76, 175, 80, 0.8); /* Green background */
+    color: white;
+}
+
+.message.error {
+    background-color: rgba(244, 67, 54, 0.8); /* Red background */
+    color: white;
+}
+
+.message.info {
+    background-color: rgba(33, 150, 243, 0.8); /* Blue background */
+    color: white;
+}
+
+.message.warning {
+    background-color: rgba(255, 152, 0, 0.8); /* Orange background */
+    color: white;
+}
