@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #1976D2;
+    background-color: #C6E2B5; /* light green */
     color: white;
     padding: 20px;
     text-align: center;
@@ -28,10 +28,10 @@ nav a:hover {
 }
 
 .hero {
-    background-color: #2196F3;
+    background-color: #8BC34A; /* soft green */
     padding: 50px 20px;
     text-align: center;
-    border-bottom: 2px solid #1976D2;
+    border-bottom: 2px solid #C6E2B5; /* light green */
 }
 
 .hero h2 {
@@ -60,7 +60,7 @@ nav a:hover {
 .cart-items h2, .cart-summary h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #1976D2;
+    color: #C6E2B5; /* light green */
 }
 
 .cart-item {
@@ -142,7 +142,7 @@ nav a:hover {
 }
 
 footer {
-    background-color: #1976D2;
+    background-color: #C6E2B5; /* light green */
     color: white;
     text-align: center;
     padding: 10px;
