@@ -75,14 +75,15 @@
         <nav>
             <a href="{% url 'product:home'%}">Home</a>
             <a href="#">Contact Us</a>
-        {% if request.user.is_authenticated %}
+            {% if request.user.is_authenticated %}
             <a href="{% url 'product:view_cart' %}">Cart</a>
             <a href="{% url 'app:upload_prescription' %}">Prescription</a>
-            <a href="{% url 'app:logout' %}">Logout</a>
-        {% else %}
-            <a href="{% url 'app:login' %}">Login</a>
-            <a href="{% url 'app:register' %}">Sign Up</a>
-        {% endif %}
+            <a href="{% url 'accounts:logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'accounts:login' %}">Login</a>
+            <a href="{% url 'accounts:register' %}">Sign Up</a>
+            {% endif %}
+        </nav>
     </header>
 
     <h2>Prescription List</h2>

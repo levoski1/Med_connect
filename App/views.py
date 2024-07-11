@@ -1,65 +1,11 @@
 from django.contrib.auth import views as my_views
 from django.contrib.auth.tokens import default_token_generator
 from django.shortcuts import render, redirect
-from App.forms import RegisterForm, PrescriptionForm
-from django.contrib.auth import login, authenticate, logout
+from App.forms import PrescriptionForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import AuthenticationForm
 from App.models import PrescriptionModel
-from django.contrib import messages
-import os
 
 
-
-# Register view
-def register_view(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            messages.success(request, 'Registration successful. Welcome to MedConnect!')
-            user = form.save()
-            login(request, user)                   
-            return redirect('product:home')
-        else:
-            for field, error in form.errors.items():
-                for error in error:
-                    messages.error(request, f'Error in {field} : {error}')
-    form = RegisterForm()
-    return render(request, "app/register.html", {'form': form})
-
-
-# login view
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            remember_me = request.POST.get('remember_me')
-            user = authenticate(username=username, password = password)
-            if user is not None:
-                login(request, user)
-                messages.success(request, 'Login successful. Welcome to MedConnect!')
-                if remember_me:
-                    request.session.set_expiry(60 * 2 * 1 * 1)
-                else:
-                    request.session.set_expiry(0)
-            
-                return redirect('product:home')
-        else:
-            for field, errors in form.errors.items():
-                for error in errors:
-                    messages.error(request, f'Error in {field} : {error}')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'app/login.html', {'form': form})
-    
-
-# logout view
-
-def logout_view(request):
-    logout(request)
-    return redirect('product:home')
 
 
 # upload view
@@ -103,4 +49,57 @@ class PasswordResetConfirm(my_views.PasswordResetConfirmView):
 
 
 class PasswordResetComplete(my_views.PasswordResetCompleteView):
-    template_name = 'app/password_reset_complete.html'
+    template_name = 'app/reset_complete.html'
+
+
+
+
+# Register view
+# def register_view(request):
+#     if request.method == 'POST':
+#         form = RegisterForm(request.POST)
+#         if form.is_valid():
+#             messages.success(request, 'Registration successful. Welcome to MedConnect!')
+#             user = form.save()
+#             login(request, user)                   
+#             return redirect('product:home')
+#         else:
+#             for field, error in form.errors.items():
+#                 for error in error:
+#                     messages.error(request, f'Error in {field} : {error}')
+#     form = RegisterForm()
+#     return render(request, "app/register.html", {'form': form})
+
+
+# # login view
+# def login_view(request):
+#     if request.method == 'POST':
+#         form = AuthenticationForm(request, data=request.POST)
+#         if form.is_valid():
+#             username = form.cleaned_data.get('username')
+#             password = form.cleaned_data.get('password')
+#             remember_me = request.POST.get('remember_me')
+#             user = authenticate(username=username, password = password)
+#             if user is not None:
+#                 login(request, user)
+#                 messages.success(request, 'Login successful. Welcome to MedConnect!')
+#                 if remember_me:
+#                     request.session.set_expiry(60 * 2 * 1 * 1)
+#                 else:
+#                     request.session.set_expiry(0)
+            
+#                 return redirect('product:home')
+#         else:
+#             for field, errors in form.errors.items():
+#                 for error in errors:
+#                     messages.error(request, f'Error in {field} : {error}')
+#     else:
+#         form = AuthenticationForm()
+#     return render(request, 'app/login.html', {'form': form})
+    
+
+# # logout view
+
+# def logout_view(request):
+#     logout(request)
+#     return redirect('product:home')

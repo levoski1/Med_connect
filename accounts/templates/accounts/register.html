@@ -25,21 +25,21 @@
             <h2>MedConnet</h2>
             <h3>Register</h3>
             <div class="input-field">
-                <input type="text" name="{{ form.username.name }}" placeholder="User Name" required >
+                <input type="text" name="username" placeholder="User Name" required >
             </div>
             <div class="input-field">
-                <input type="email" name="{{ form.email.name }}" placeholder="Email Address" required >
+                <input type="email" name="email" placeholder="Email Address" required >
             </div>
             <div class="input-field">
-                <input type="password" name="{{ form.password1.name }}" placeholder="Enter Password" required >
+                <input type="password" name="password1" placeholder="Enter Password" required >
             </div>
             <div class="input-field">
-                <input type="password" name="{{ form.password2.name }}" placeholder="Comfirm Password" required >
+                <input type="password" name="password2" placeholder="Comfirm Password" required >
             </div>
             <button type="submit" class="btn">Register</button>
         </form>
         <div class="register">
-            <p>Already have an account? <a href="{% url 'app:login' %}">Login here</a></p>
+            <p>Already have an account? <a href="{% url 'accounts:login' %}">Login here</a></p>
         </div>
     </div>
 </body>
