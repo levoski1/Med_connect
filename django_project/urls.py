@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('App.urls', namespace='app')),
     path('product/', include('Product.urls', namespace='product')),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
 
     path('password_reset/', views.forget_password.as_view(), name='forget_password'),
     path('password_reset/done/', views.PasswordResetDone.as_view(), name='password_reset_done'),

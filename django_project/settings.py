@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'App.apps.AppConfig',
     'Product.apps.ProductConfig',
+    'accounts.apps.AccountsConfig',
     'sslserver',
 ]
 

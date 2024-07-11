@@ -25,19 +25,19 @@
             <h2>MedConnet</h2>
             <h3>Login</h3>
             <div class="input-field">
-                <input type="text" name="{{ form.username.name }}" placeholder="User Name" required >
+                <input type="text" name="username" placeholder="User Name" required >
                
             </div>
             <div class="input-field">
-                <input type="password" name="{{ form.password.name }}" placeholder="Enter Password" required >
+                <input type="password" name="password" placeholder="Enter Password" required >
             </div>
             <div class="remember">
-                <label><input type="checkbox">Remember me</label>
+                <label><input type="checkbox" name="remember_me">Remember me</label>
             <a href="{% url 'forget_password' %}">Forgot password</a>
            </div>
            <button type="submit" class="btn">Login</button>
            <div class="register">
-            <p>Dont have an account? <a href="{% url 'app:register' %}">Register</a></p>
+            <p>Dont have an account? <a href="{% url 'accounts:register' %}">Register</a></p>
            </div>
         </form>
     </div>
