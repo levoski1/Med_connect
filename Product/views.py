@@ -59,3 +59,12 @@ def checkout(request):
         'total':total,
     }
     return render(request, 'product/checkout.html', context=context)
+
+
+def search_products(request):
+    query = request.GET.get('query')
+    products = CartItem.objects.filter(name__icontains=query)
+    return render(request, 'product_list.html', {'products': products})
+
+def about(request):
+    return render(request, 'product/about.html')

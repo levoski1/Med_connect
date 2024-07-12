@@ -1,0 +1,66 @@
+{% extends 'product/base.html' %}
+
+{% load static %}
+
+{% block title %}About Us - MedConnect{% endblock %}
+
+{% block content %}
+
+<style>
+    .main {
+    padding: 100px 20px 20px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-section {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #343a40;
+    margin-top: 20px;
+}
+
+p {
+    margin: 10px 0;
+    text-align: left;
+}
+
+ul {
+    text-align: left;
+    padding-left: 20px;
+}
+</style>
+<div class="main">
+    <section class="about-section">
+        <h2>About MedConnect</h2>
+        <p>Welcome to MedConnect! We are committed to providing you with a seamless online pharmacy experience. Our mission is to connect you with the best healthcare products, ensuring convenience, affordability, and reliability.</p>
+        <h3>Our Mission</h3>
+        <p>At MedConnect, our mission is to make healthcare accessible and affordable for everyone. We strive to offer a wide range of products, including prescription medications, over-the-counter drugs, and health supplements, all at competitive prices.</p>
+        <h3>Our Values</h3>
+        <ul>
+            <li><strong>Customer Focus:</strong> We prioritize our customers' needs and work diligently to meet their expectations.</li>
+            <li><strong>Integrity:</strong> We uphold the highest standards of integrity in all our actions.</li>
+            <li><strong>Quality:</strong> We provide high-quality products and services that meet regulatory standards.</li>
+            <li><strong>Innovation:</strong> We embrace innovation to enhance the customer experience and improve healthcare delivery.</li>
+        </ul>
+        <h3>Our Team</h3>
+        <p>Our team consists of dedicated professionals with extensive experience in the healthcare and e-commerce sectors. We are passionate about helping our customers achieve better health outcomes through our reliable services.</p>
+        <h3>Contact Us</h3>
+        <p>If you have any questions or need assistance, please don't hesitate to contact us at <a href="mailto:support@medconnect.com">support@medconnect.com</a>.</p>
+    </section>
+</div>
+
+{% endblock %}

@@ -1,108 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - MedConnect</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'product/css/checkout.css' %}">
-</head>
-<body>
-    <header>
-        <h1>MedConnect</h1>
-        {% if request.user.is_authenticated %}
-        <span>Welcome, {{ user.username }}</span>
-        {% endif %}
-        <br>
-        <br>
-        <nav>
-            <a href="{% url 'product:home'%}">Home</a>
-            <a href="#">Contact Us</a>
-            {% if request.user.is_authenticated %}
-            <a href="{% url 'product:view_cart' %}">Cart</a>
-            <a href="{% url 'app:upload_prescription' %}">Prescription</a>
-            <a href="{% url 'accounts:logout' %}">Logout</a>
-            {% else %}
-            <a href="{% url 'accounts:login' %}">Login</a>
-            <a href="{% url 'accounts:register' %}">Sign Up</a>
-            {% endif %}
-        </nav>
-    </header>
 
-    <div class="hero">
-        <h2>Checkout</h2>
-        <p>Complete your purchase by providing your details below.</p>
-    </div>
+{% extends 'product/base.html' %}
 
-    <div class="main">
-        <section class="checkout">
-            <div class="checkout-section">
-                <h2>Shipping Information</h2>
-                <form class="shipping-form">
-                    <label for="fullname">Full Name:</label>
-                    <input type="text" id="fullname" name="fullname" required>
+{% load static %}
 
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" required>
+{% block title %}checkout{% endblock %}
 
-                    <label for="city">City:</label>
-                    <input type="text" id="city" name="city" required>
+{% block content %}
+<link rel="stylesheet" href="{% static 'product/css/checkout.css' %}">
+<div class="hero">
+    <h2>Checkout</h2>
+    <p>Complete your purchase by providing your details below.</p>
+</div>
 
-                    <label for="state">State:</label>
-                    <input type="text" id="state" name="state" required>
+<div class="main">
+    <section class="checkout">
+        <div class="checkout-section">
+            <h2>Shipping Information</h2>
+            <form class="shipping-form">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
 
-                    <label for="zipcode">Zip Code:</label>
-                    <input type="text" id="zipcode" name="zipcode" required>
-                </form>
-            </div>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
 
-            <div class="checkout-section">
-                <h2>Payment Information</h2>
-                <form class="payment-form">
-                    <label for="cardname">Name on Card:</label>
-                    <input type="text" id="cardname" name="cardname" required>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
 
-                    <label for="cardnumber">Card Number:</label>
-                    <input type="text" id="cardnumber" name="cardnumber" required>
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
 
-                    <label for="expdate">Expiration Date:</label>
-                    <input type="text" id="expdate" name="expdate" required>
-
-                    <label for="cvv">CVV:</label>
-                    <input type="text" id="cvv" name="cvv" required>
-                </form>
-            </div>
-
-            <div class="checkout-summary">
-                <h2>Order Summary</h2>
-                {% for item in cart_items %}
-                <div class="order-item">
-                    <div class="product-details">
-                        <img src="{{ item.product.image }}" alt="{{ item.product.product_name }}">
-                        <div>
-                            <h3>{{ item.product.product_name }}</h3>
-                            <p>${{ item.product.product_price }}</p>
-                        </div>
-                    </div>
-                    <div class="quantity">
-                        <label for="quantity{{ item.id }}">Quantity:</label>
-                        <input type="number" id="quantity{{ item.id }}" name="quantity{{ item.id }}" value="{{ item.quantity }}" min="1" readonly>
-                    </div>
-                </div>
-                {% endfor %}
-                <div class="order-total">
-                    <p>Subtotal: ${{ total_price }}</p>
-                    <p>Estimated Tax: ${{ estimated_tax }}</p>
-                    <p>Total: ${{ total }}</p>
-                </div>
-                <button type="submit">Place Order</button>
-            </div>
+                <label for="zipcode">Zip Code:</label>
+                <input type="text" id="zipcode" name="zipcode" required>
             </form>
-        </section>
-    </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2024 MedConnect. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+        <div class="checkout-section">
+            <h2>Payment Information</h2>
+            <form class="payment-form">
+                <label for="cardname">Name on Card:</label>
+                <input type="text" id="cardname" name="cardname" required>
+
+                <label for="cardnumber">Card Number:</label>
+                <input type="text" id="cardnumber" name="cardnumber" required>
+
+                <label for="expdate">Expiration Date:</label>
+                <input type="text" id="expdate" name="expdate" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </form>
+        </div>
+
+        <div class="checkout-summary">
+            <h2>Order Summary</h2>
+            {% for item in cart_items %}
+            <div class="order-item">
+                <div class="product-details">
+                    <img src="{{ item.product.image }}" alt="{{ item.product.product_name }}">
+                    <div>
+                        <h3>{{ item.product.product_name }}</h3>
+                        <p>${{ item.product.product_price }}</p>
+                    </div>
+                </div>
+                <div class="quantity">
+                    <label for="quantity{{ item.id }}">Quantity:</label>
+                    <input type="number" id="quantity{{ item.id }}" name="quantity{{ item.id }}" value="{{ item.quantity }}" min="1" readonly>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="order-total">
+                <p>Subtotal: ${{ total_price }}</p>
+                <p>Estimated Tax: ${{ estimated_tax }}</p>
+                <p>Total: ${{ total }}</p>
+            </div>
+            <button type="submit">Place Order</button>
+        </div>
+        </form>
+    </section>
+</div>
+{% endblock %}

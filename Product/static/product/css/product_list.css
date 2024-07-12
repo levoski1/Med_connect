@@ -1,34 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #F4F9F4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #C6E2B5; /* light green */
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
 
 .hero {
-    background-color: #8BC34A; /* soft green */
-    padding: 50px 20px;
+    background-color: #F39C12;
+    padding: 100px 20px 50px 20px;
     text-align: center;
-    border-bottom: 2px solid #C6E2B5; /* light green */
+    border-bottom: 2px solid #2C3E50;
+    margin-top: 100px;
 }
 
 .hero h2 {
@@ -64,19 +40,19 @@ nav a:hover {
     margin: auto;
 }
 
-.featured-products h2, .promotions h2, .testimonials h2, .contact-form h2 {
+.featured-products h2, .testimonials h2, .contact-form h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #C6E2B5; /* light green */
+    color: #2C3E50;
 }
 
-.product-grid, .promotion-grid, .testimonial-grid {
+.product-grid, .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.product, .promotion, .testimonial {
+.product, .testimonial {
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
@@ -85,16 +61,16 @@ nav a:hover {
     transition: box-shadow 0.3s;
 }
 
-.product img, .promotion img {
+.product img {
     width: 100%;
     height: auto;
     border-bottom: 1px solid #ddd;
     margin-bottom: 15px;
 }
 
-.product h3, .promotion h3, .testimonial p {
+.product h3, .testimonial p {
     margin: 10px 0;
-    color: #C6E2B5; /* light green */
+    color: #2C3E50;
 }
 
 .product p, .testimonial span {
@@ -122,7 +98,7 @@ nav a:hover {
 .contact-form {
     text-align: center;
     padding: 20px;
-    background-color: #E3F2FD;
+    background-color: #ECF0F1;
     border-radius: 10px;
     margin: 40px 0;
 }
@@ -142,16 +118,7 @@ nav a:hover {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    width: 300px;
-    margin-bottom: 10px;
-}
-
-footer {
-    background-color: #C6E2B5; /* light green */
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
 }
