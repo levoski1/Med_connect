@@ -47,6 +47,7 @@ To run this project locally, follow these steps:
    ```
 
 ## Project Structure
+ ```bash
 medconnect/
 ├── manage.py
 ├── README.md
@@ -93,3 +94,4 @@ medconnect/
     ├── tests.py
     ├── urls.py
     └── views.py
+ ```
