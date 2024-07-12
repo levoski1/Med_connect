@@ -55,6 +55,10 @@ button:hover {
         {{ form.as_p }}
         <button type="submit">Upload</button>
     </form>
+    <form action="{% url 'app:prescription' %}" method="post">
+        {% csrf_token%}
+        <button type="submit">View prescription</button>
+    </form>
 </div>
 
 {% endblock %}
