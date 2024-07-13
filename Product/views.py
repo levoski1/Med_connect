@@ -63,8 +63,8 @@ def checkout(request):
 
 def search_products(request):
     query = request.GET.get('query')
-    products = CartItem.objects.filter(name__icontains=query)
-    return render(request, 'product_list.html', {'products': products})
+    products = ProductModel.objects.filter(product_name__icontains=query)
+    return render(request, 'product/product_list.html', {'products': products})
 
 def about(request):
     return render(request, 'product/about.html')
