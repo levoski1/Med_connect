@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #F4F9F4;
@@ -7,10 +11,14 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #003e29;
     color: white;
-    padding: 10px 10px;
-    margin-left: 10px 10px;
+    padding: 0px 5px;
+    margin-left: 0px 5px;
     text-align: center;
     position: fixed;
     width: 100%;
@@ -31,11 +39,18 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-right: auto;
+    padding-left: 1px;
+}
+
+img{
+    width: 70px;
+    height: 70px;
 }
 
 nav {
-    display: flex;
-    gap: 10px;
+    flex: 1;
+    gap: 5px;
     flex-wrap: wrap;
     align-items: center;
 }
@@ -52,8 +67,10 @@ nav a:hover {
 }
 
 .search-form {
+    float: right;
     display: flex;
-    gap: 10px;
+    gap: 5px;
+    margin-left: auto;
     margin-right: 20px 20px;
 }
 
@@ -79,7 +96,7 @@ nav a:hover {
 
 
 footer {
-    background-color: #4CAF50;
+    background-color: #003e29;
     color: white;
     text-align: center;
     padding: 10px;
