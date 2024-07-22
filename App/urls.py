@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 
 app_name = 'app'
 urlpatterns = [
+    path('',views.landing_page, name='landing'),
     path('prescription/', views.upload_prescription, name='upload_prescription'),
     path('prescription_list/', views.prescription_list, name='prescription'),    
 ]

@@ -9,8 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-# Import dj-database-url at the beginning of the file.
-import dj_database_url # Render Deploy
+
 from pathlib import Path
 import os
 
@@ -25,8 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-g=jzhv5zv8nxar2z0jpv#jv-$o*p(+e597*wgkau$gc&7v*m4e')
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-g=jzhv5zv8nxar2z0jpv#jv-$o*p(+e597*wgkau$gc&7v*m4e')
+DEBUG = 'True'
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(",")
 
 
@@ -82,13 +81,10 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-if not DEBUG:
-    DATABASES = {
-	"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
+
     
-else:
-    DATABASES = {
+
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -102,18 +98,18 @@ else:
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    # {
-    #     'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    # },
-    # {
-    #     'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    # },
-    # {
-    #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    # },
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-        'OPTION': {'min_length': 3},
+        'OPTION': {'min_length': 5},
     },
     
     
@@ -141,13 +137,14 @@ STATIC_URL = 'static/'
 
 
 
-# This production code might break development mode, so we check whether we're in DEBUG mode
-if not DEBUG:
-    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
-    # and renames the files with unique names for each version to support long-term caching
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

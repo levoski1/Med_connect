@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MedConnect</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/landing.css' %}">
+</head>
+<body>
+    <header class="landing-header">
+        <div class="landing-header-container">
+            <div class="logo-container">
+                <img src="{% static 'app/images/logo.jpeg' %}" alt="MedConnect Logo">
+              
+            </div>
+            <nav>
+                <a href="{% url 'app:landing' %}">Home</a>
+                <a href="#contact-us">Contact</a>
+                <a href="{% url 'product:home' %}">Products</a>
+                <a href="#testimonials">Reviews</a>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'product:view_cart' %}">Cart</a>
+                <a href="{% url 'app:upload_prescription' %}">Prescription</a>
+                <a href="{% url 'accounts:logout' %}">Logout</a>
+                {% else %}
+                <a href="{% url 'accounts:login' %}">Login</a>
+                <a href="{% url 'accounts:register' %}">Sign Up</a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to MedConnect</h1>
+            <p>Your trusted online pharmacy</p>
+            <a href="{% url 'product:home' %}" class="cta-button">Explore Products</a>
+        </section>
+
+        <section id="about-us" class="about-us">
+            <h2>About Us</h2>
+            <p>MedConnect is your reliable online pharmacy, offering a wide range of products and exceptional customer service.</p>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <h3>Wide Range of Products</h3>
+                    <p>We offer a vast selection of medications and health products.</p>
+                </div>
+                <div class="service">
+                    <h3>Fast Delivery</h3>
+                    <p>Get your orders delivered quickly and reliably.</p>
+                </div>
+                <div class="service">
+                    <h3>Customer Support</h3>
+                    <p>Our customer support team is here to assist you 24/7.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-us" class="contact-form">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MedConnect. All rights reserved.</p>
+    </footer>
+</body>
+</html>

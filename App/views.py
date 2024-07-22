@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 from App.models import PrescriptionModel
 
 
-
+def landing_page(request):
+    return render(request, 'app/landing.html')
 
 # upload view
 @login_required

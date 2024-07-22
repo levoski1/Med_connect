@@ -52,4 +52,4 @@ def login_view(request):
 # View for user logout
 def logout_view(request):
     logout(request)
-    return redirect('product:home')
+    return redirect('app:landing')

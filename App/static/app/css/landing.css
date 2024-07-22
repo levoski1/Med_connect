@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F9F4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.landing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #003e29;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.landing-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background-color: #F39C12;
+    padding: 150px 20px 100px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: white;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 10px 0 20px;
+    color: #fff;
+}
+
+.hero .cta-button {
+    background-color: #003e29;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.hero .cta-button:hover {
+    background-color: #388E3C;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-us, .services, .contact-form {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    transition: box-shadow 0.3s;
+}
+
+.service:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+.contact-form button {
+    background-color: #003e29;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #388E3C;
+}
+
+footer {
+    background-color: #003e29;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .landing-header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .about-us, .services, .contact-form {
+        padding: 20px;
+    }
+}
