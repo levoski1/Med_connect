@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import environ
 import os
+
+
 
 
 
@@ -19,14 +22,18 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# Initialize environment variables
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-g=jzhv5zv8nxar2z0jpv#jv-$o*p(+e597*wgkau$gc&7v*m4e')
-DEBUG = 'True'
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(",")
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env.bool('DEBUG', default=False)
+ALLOWED_HOSTS = ['localhost', 'www.levibliss.tech','127.0.0.1']
 
 
 
@@ -116,6 +123,36 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Security settings
+
+if DEBUG == False:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'
+
+#Error logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -140,9 +177,14 @@ STATIC_URL = 'static/'
 
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+'''
+# I will only need this if i have an additional path for static files
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+'''
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -170,8 +212,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465  # or 587 if you prefer to use TLS instead of SSL
 EMAIL_USE_SSL = True  # Use SSL/TLS connection
 EMAIL_USE_TLS = False  # Disable TLS, since we are using SSL
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 
 
 #MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
