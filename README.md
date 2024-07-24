@@ -8,8 +8,7 @@ MedConnect is an online pharmacy web application designed to provide users with 
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
+- [Contributors](#contributors)
 - [License](#license)
 - [Contact](#contact)
 
@@ -29,7 +28,7 @@ MedConnect is an online pharmacy web application designed to provide users with 
 - **Database**: SQLite (for development), PostgreSQL (for production)
 - **Other Libraries**: Django REST Framework, Pillow (for image handling), etc.
 
-## Installation
+## Installation & usage
 
 To run this project locally, follow these steps:
 
@@ -46,52 +45,6 @@ To run this project locally, follow these steps:
    # Open your browser and go to http://127.0.0.1:8000.
    ```
 
-## Project Structure
- ```bash
-medconnect/
-├── manage.py
-├── README.md
-├── requirements.txt
-├── app/                     # Main application
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── models.py
-│   ├── tests.py
-│   ├── urls.py
-│   ├── views.py
-│   ├── templates/
-│   │   ├── base.html
-│   │   ├── home.html
-│   │   ├── cart.html
-│   │   ├── checkout.html
-│   │   ├── upload_prescription.html
-│   │   ├── prescription_list.html
-│   │   └── about_us.html
-│   └── static/
-│       ├── css/
-│       │   ├── main.css
-│       │   ├── home.css
-│       │   ├── cart.css
-│       │   ├── checkout.css
-│       │   ├── upload_prescription.css
-│       │   ├── prescription_list.css
-│       │   └── about_us.css
-│       └── js/
-├── accounts/                # User accounts application
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── models.py
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-└── product/                 # Product application
-    ├── admin.py
-    ├── apps.py
-    ├── forms.py
-    ├── models.py
-    ├── tests.py
-    ├── urls.py
-    └── views.py
- ```
+## Contributors
+1.  Ugwoke Levi Soromto (Backend) [soromtolevi@gmail.com](mailto:soromtolevi@gmail.com) 
+
