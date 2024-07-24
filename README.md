@@ -46,5 +46,14 @@ To run this project locally, follow these steps:
    ```
 
 ## Contributors
-1.  Ugwoke Levi Soromto (Backend) [soromtolevi@gmail.com](mailto:soromtolevi@gmail.com) 
+1.  Ugwoke Levi Soromto (Backend) [soromtolevi1@gmail.com](mailto:soromtolevi@gmail.com)
 
+
+Name: Nwaogu Immaculata 
+Role: Graphic Design
+Email: [immaculatachinwendu@gmail.com] (mailto:immaculatachinwendu@gmail.com)
+
+
+Emeka Elumelu
+Front-end 
+[dockolinz@gmail.com] (mailto:dockolinz@gmail.com)
