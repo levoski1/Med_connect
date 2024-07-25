@@ -3,7 +3,8 @@
   "builds": [
     {
       "src": "build_files.sh",
-      "use": "@vercel/static-build",
+       "use": "@vercel/python",
+      "buildCommand": "python3 -m ensurepip --upgrade && pip install -r requirements.txt",
       "config": {
         "distDir": "staticfiles"
       }
