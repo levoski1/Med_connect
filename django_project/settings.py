@@ -98,24 +98,15 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Soromtolevi1',
-#         'HOST': 'localhost',
-#         'PORT': '5432', 
-#     }
-# }
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'verceldb',
         'USER': 'default',
-        'PASSWORD': 'q9nCljXEA6Rp',
-        'HOST': 'ep-wispy-dream-a4nb0c26-pooler.us-east-1.aws.neon.tech',
+        'PASSWORD': env('DB_PASS'),
+        'HOST': env('DB_HOST'),
         'PORT': '5432',
         'OPTIONS': {
             'sslmode': 'require',
