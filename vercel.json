@@ -3,7 +3,7 @@
   "functions": {
     "api/**/*": {
       "excludeFiles": "**/*",
-      "includeFiles": ["api/index.py", "requirements.txt"],
+      "includeFiles": "requirements.txt",
       "runtime": "python3.9"
     }
   },
