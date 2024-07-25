@@ -1,12 +1,19 @@
 {
   "version": 2,
   "functions": {
-    "django_project/**/*": {
-      "excludeFiles": "**/*",
-      "includeFiles": "requirements.txt",
+    "wsgi.py": {
       "runtime": "@vercel/python@1.0.0"
     }
   },
+  "builds": [
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles"
+      }
+    }
+  ],
   "routes": [
     {
       "src": "/static/(.*)",
@@ -14,7 +21,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/django_project/wsgi.py"
+      "dest": "/wsgi.py"
     }
   ]
 }
