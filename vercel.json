@@ -1,23 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "python3.9"
-      }
-    },
-    {
-      "src": "/django_project/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      },
-      "excludeFiles": "**/*"
+  "functions": {
+    "api/**/*": {
+      "excludeFiles": "**/*",
+      "includeFiles": ["api/index.py", "requirements.txt"],
+      "runtime": "python3.9"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/static/(.*)",
@@ -25,7 +14,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/django_project/wsgi.py"
+      "dest": "/api/index.py"
     }
   ]
 }
