@@ -1,7 +1,7 @@
 {
   "version": 2,
   "functions": {
-    "api/**/*": {
+    "django_project/**/*": {
       "excludeFiles": "**/*",
       "includeFiles": "requirements.txt",
       "runtime": "@vercel/python@1.0.0"
@@ -14,7 +14,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/api/index.py"
+      "dest": "/django_project/wsgi.py"
     }
   ]
 }
