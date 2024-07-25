@@ -14,14 +14,10 @@
       "config": {
         "maxLambdaSize": "15mb",
         "runtime": "python3.9"
-      }
-    }
-  ],
-  "functions": {
-    "api/**/*": {
+      },
       "excludeFiles": "**/*"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/static/(.*)",
