@@ -3,3 +3,4 @@ env/
 */__pycache__/
 */migrations/__pycache__
 db.sqlite3
+db_backup.json

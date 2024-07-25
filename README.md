@@ -46,14 +46,33 @@ To run this project locally, follow these steps:
    ```
 
 ## Contributors
-1.  Ugwoke Levi Soromto (Backend) [soromtolevi1@gmail.com](mailto:soromtolevi@gmail.com)
 
+<p align="center"><strong><u>UI/UX DESIGNER</u></strong></p>
 
-Name: Nwaogu Immaculata 
-Role: Graphic Design
-Email: [immaculatachinwendu@gmail.com] (mailto:immaculatachinwendu@gmail.com)
+1. Ruth Yayra Obi (UI/UX Designer) [trotyayra91@gmail.com](mailto:trotyayra91@gmail.com)
+2. Odiase Idemudia Joshua (UI/UX Designer) [idemudiaodiase01@gmail.com](mailto:idemudiaodiase01@gmail.com)
 
+<p align="center"><strong><u>WEB DESIGNER</u></strong></p>
 
-Emeka Elumelu
-Front-end 
-[dockolinz@gmail.com] (mailto:dockolinz@gmail.com)
+3. Shiline Yemurai Munyambare (Web designer) [shilinemunyambare@gmail.com](mailto:shilinemunyambare@gmail.com)
+4. Nora Okoro (Web designer) [norafresh5@gmail.com](mailto:norafresh5@gmail.com)
+
+<p align="center"><strong><u>GRAPHICS DESIGNER</u></strong></p>
+
+5. Olakayi, Gogo Mbaja (Graphics Designer) [gogombaja@gmail.com](mailto:gogombaja@gmail.com)
+6. Nwaogu Immaculata (Graphic Design) [immaculatachinwendu@gmail.com](mailto:immaculatachinwendu@gmail.com)
+
+<p align="center"><strong><u>FRONTEND ENGINEER</u></strong></p>
+
+7. Hephzibah Ijeje (Frontend Engineer) [hephzibahijeje89@gmail.com](mailto:hephzibahijeje89@gmail.com)
+8. Emmanuel Adah (Frontend Engineer) [abahemmanueladah11@gmail.com](mailto:abahemmanueladah11@gmail.com)
+9. Okoro chukwuebuka miracle (Frontend Engineer) [Bizzybone.om@gmail.com](mailto:Bizzybone.om@gmail.com)
+10. Emeka Elumelu (Front-end) [dockolinz@gmail.com](mailto:dockolinz@gmail.com)
+
+<p align="center"><strong><u>BACKEND ENGINEER</u></strong></p>
+
+11. Ugwoke Levi Soromto (Backend Developer) [soromtolevi1@gmail.com](mailto:soromtolevi1@gmail.com)
+12. Charles Kumah Ntim (Backend Developer) [papaseyone@gmail.com](mailto:papaseyone@gmail.com)
+13. Victor Mulinge Muendo (Backend Developer) [victormulinge92@gmail.com](mailto:victormulinge92@gmail.com)
+14. Onyinyechi Nwachukwu (Backend Developer) [nwachukwuonyinyechi79@gmail.com](mailto:nwachukwuonyinyechi79@gmail.com)
+15. Kelvin Chukwuka (Backend Developer) [koolkt10@gmail.com](mailto:koolkt10@gmail.com)
