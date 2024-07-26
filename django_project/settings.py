@@ -37,7 +37,7 @@ DEBUG = env.bool('DEBUG', default=False)
 
 
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['medconnect-z1oo.onrender.com','localhost','127.0.0.1']
 
 
 
